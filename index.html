@@ -236,6 +236,257 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/19/javascript-对象-md/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mercy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/19/javascript-对象-md/" itemprop="url">
+                  javascript 对象.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-19T10:09:18+08:00">
+                2016-12-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h2><ul>
+<li>javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String,  Number, Boolean.</li>
+</ul>
+<h2 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h2><p><img src="/home/mercy/Documents/blog/Hexo/public/images/js-inheried.png" alt=""></p>
+<ul>
+<li><p><strong>万物皆空</strong> ，从上图可以看出来，JavaScript的祖先 <strong>NULL</strong> ，而两位长老分别是： <strong>Object.prototype</strong>、<strong>Function.prototype</strong> 。</p>
+</li>
+<li><p>原型指针（<strong>__proto__</strong>):和原型对象(<strong>prototype</strong>)</p>
+<ol>
+<li>原型指针（<strong>__proto__</strong>):每个对象都有个原型指针指向该对象的原型对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.__proto__ === null    //true,所以Object.prototype的原型是null。</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var Person = function(name)&#123;</div><div class="line">  this.name = name;</div><div class="line">&#125;;</div><div class="line">p1 = new Person(&apos;zhnagsan&apos;);</div><div class="line">p2 = new Person(&apos;lisi&apos;);</div><div class="line">p1.__proto__===Person.prototype     //true</div><div class="line">p2.__proto__===Person.prototype     //true</div><div class="line">p1.__proto__ === p2.__proto__       //true</div><div class="line">Person.__proto__ === Function.prototype     //true</div><div class="line">Person.__proto__.__proto__ ===Object.prototype     //true</div><div class="line">Person.__proto__.__proto__.__proto__ === null     //true</div><div class="line">```   </div><div class="line">值得注意的是，按照语言标准，\__proto__ 属性只有浏览器才需要部署，其他环境可以没有这个属性，而且前后的两根下划线，表示它本质是一个内部属性，不应该对使用者暴露。因此，应该尽量少用这个属性，而是用Object.getPrototypeof和Object.setPrototypeOf，进行原型对象的读写操作。</div><div class="line"></div><div class="line"> 2. 原型对象（__prototype__）: 每个函数对象都有 __prototype__ 属性，这里需要注意的是：只有函数对象才有 __prototype__ 属性,函数对象也是对象，同时也拥有 \__proto\__ 属性，指向 **Function.prototype** .</div></pre></td></tr></table></figure>
+<p>var Person = function(name){<br>  this.name=name;<br>}<br>console.log(Person.prototype);  // –&gt; Object {…}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个原型对象都有自己的构造函数 constructor,并且：</div></pre></td></tr></table></figure></p>
+<p>Person.prototype.constructor === Person     //true, Person.prototype.constructor指向对象本身<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一般将一些对象公用的方法定义在对象的原型对象里：</div></pre></td></tr></table></figure></p>
+<p>Person.prototype.sayName =function sayName(){<br>  console.log(this.name);<br>}<br>p1 = new Person(‘zhnagsan’);<br>p2 = new Person(‘lisi’);<br>console.log(p1.sayName());    // zhangsan<br>console.log(p2.sayName());    //lisi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> 3. 用两张图来表示原型对象和原型指针的关系：     </div><div class="line">```   </div><div class="line">var a = new Array();   </div><div class="line">```   </div><div class="line">![](public/images/proto1.png)</div></pre></td></tr></table></figure></p>
+<p>var Foo = function() {}<br>var a = new Foo();<br>```<br><img src="public/images/proto2.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/16/javascript原型世界-md/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Mercy">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/images/avatar.gif">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Hexo">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Hexo" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/12/16/javascript原型世界-md/" itemprop="url">
+                  javascript原型世界.md
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-16T15:59:02+08:00">
+                2016-12-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
   <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/16/linux-常用命令总结-md/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -532,7 +783,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
