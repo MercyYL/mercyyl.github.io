@@ -73,6 +73,10 @@
 
 
 
+  
+
+
+  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
 
 
 
@@ -84,40 +88,34 @@
 
 
 
-<meta name="description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
-
-JavaScript内置对象
+<meta name="description" content="JavaScript内置对象
 javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以">
+万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.proto">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript 对象.md">
 <meta property="og:url" content="http://yoursite.com/2016/12/19/javascript-对象-md/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
-
-JavaScript内置对象
+<meta property="og:description" content="JavaScript内置对象
 javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以">
+万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.proto">
 <meta property="og:image" content="http://yoursite.com/images/js-inheried.png">
 <meta property="og:image" content="http://yoursite.com/images/proto1.png">
 <meta property="og:image" content="http://yoursite.com/images/proto2.png">
-<meta property="og:updated_time" content="2016-12-20T01:53:40.066Z">
+<meta property="og:updated_time" content="2016-12-20T07:11:30.117Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 对象.md">
-<meta name="twitter:description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
-
-JavaScript内置对象
+<meta name="twitter:description" content="JavaScript内置对象
 javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以">
+万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.proto">
 <meta name="twitter:image" content="http://yoursite.com/images/js-inheried.png">
 
 
@@ -336,10 +334,7 @@ JavaScript的祖先和两位长老
       
 
       
-        <blockquote>
-<p>本文参考： <a href="http://www.jianshu.com/p/3bb6f208e459" target="_blank" rel="external">http://www.jianshu.com/p/3bb6f208e459</a></p>
-</blockquote>
-<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
+        <h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
 <li>javascript 有很多内置对象, 如：<strong>Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean</strong>.</li>
 </ul>
 <h1 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h1><p><img src="/images/js-inheried.png" alt=""></p>
@@ -366,11 +361,14 @@ JavaScript的祖先和两位长老
 </li>
 <li><p>再说两位长老<br>从上可以看书出，JavaScript中的两位长老 <strong>Object.prototype</strong>,<strong>Function.prototype</strong>。可以这样总结这两个对象：</p>
 <blockquote>
-<p><strong>Object.prototype</strong> 是所有函数对象的原型对象的原型（即 *.prototype.__proto__ 所指的对象）,也是普通对象的原型<br> <strong>Function.prototype</strong> 是所有函数对象的原型（即 *.__proto__)<br> ps： 这里的 * 都指的是 函数对象。</p>
+<p><strong>Object.prototype</strong> 是所有函数对象的原型对象的原型（即 *.prototype.__proto__ 所指的对象）,也是普通对象的原型。<br> <strong>Function.prototype</strong> 是所有函数对象的原型（即 *.__proto__)<br> ps： 这里的 * 都指的是 函数对象。</p>
 </blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;a:1&#125;;</div><div class="line">obj.__proto__ === Object.prototype   // true</div><div class="line">var fun = function()&#123;&#125;  </div><div class="line">fun.__proto__ === Function.prototype    //  true</div><div class="line">fun.prototype instanceof Object     //true</div><div class="line">fun.prototype.__proto__   //true</div></pre></td></tr></table></figure>
 </li>
 </ol>
+<blockquote>
+<p>本文参考： <a href="http://www.jianshu.com/p/3bb6f208e459" target="_blank" rel="external">http://www.jianshu.com/p/3bb6f208e459</a></p>
+</blockquote>
 
       
     </div>
@@ -406,6 +404,10 @@ JavaScript的祖先和两位长老
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/12/20/postgresql-索引-md/" rel="prev" title="postgresql 索引.md">
+                postgresql 索引.md <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -473,7 +475,7 @@ JavaScript的祖先和两位长老
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">3</span>
+              <span class="site-state-item-count">4</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -484,6 +486,13 @@ JavaScript的祖先和两位长老
 
         </nav>
 
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
         
 
         <div class="links-of-author motion-element">
