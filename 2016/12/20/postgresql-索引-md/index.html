@@ -73,6 +73,8 @@
 
 
 
+  
+
 
   <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml" />
 
@@ -102,7 +104,7 @@
 <meta property="og:image" content="http://yoursite.com/images/select_with_left.png">
 <meta property="og:image" content="http://yoursite.com/images/select_no_condition.png">
 <meta property="og:image" content="http://yoursite.com/images/select_with_condition.png">
-<meta property="og:updated_time" content="2016-12-20T08:34:17.729Z">
+<meta property="og:updated_time" content="2016-12-20T08:38:27.017Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="postgresql 索引.md">
 <meta name="twitter:description" content="索引的基础知识索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。
@@ -200,7 +202,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -210,7 +212,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -289,7 +291,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-20T15:20:57+08:00">
                 2016-12-20
               </time>
@@ -347,7 +349,7 @@
 <h3 id="单列索引"><a href="#单列索引" class="headerlink" title="单列索引"></a>单列索引</h3><p>刚刚创建的在column（a）上的索引，就是一个单列索引。</p>
 <h3 id="多列索引"><a href="#多列索引" class="headerlink" title="多列索引"></a>多列索引</h3><p>语句</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">CREATE INDEX idx_t3_abc ON t3(a,b,c)</div></pre></td></tr></table></figure>
-<p>是否要创建一个单列索引或多列索引，要根据该列是否在where频繁使用。<br><strong>另外需要注意</strong> 的是创建多列索引有一个最左匹配原则，即想要使用多列索引就必须要在where子句中出现多列索引的最左列，即本例中的 a 列。</p>
+<p>是否要创建一个单列索引或多列索引，要根据该列是否在where频繁使用。<br><strong>另外需要注意</strong> 的是创建多列索引有一个 <strong>最左前缀原则</strong> ，即想要使用多列索引就必须要在where子句中出现多列索引的最左列，即本例中的 a 列。</p>
 <p>没有加入条件 a ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">EXPLAIN ANALYZE SELECT a,b,c FROM t3 where b=&apos;1b&apos; and c=&apos;1c&apos;</div></pre></td></tr></table></figure>
 <p>运行结果：</p>
@@ -459,10 +461,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -479,7 +481,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">4</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -553,7 +555,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
