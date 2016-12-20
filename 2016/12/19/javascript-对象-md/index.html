@@ -84,34 +84,41 @@
 
 
 
-<meta name="description" content="JavaScript内置对象
-javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String,  Number, Boolean.
+<meta name="description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
+
+JavaScript内置对象
+javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.prot">
+万物皆空 ，从上图可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javascript 对象.md">
 <meta property="og:url" content="http://yoursite.com/2016/12/19/javascript-对象-md/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="JavaScript内置对象
-javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String,  Number, Boolean.
+<meta property="og:description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
+
+JavaScript内置对象
+javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.prot">
-<meta property="og:image" content="http://yoursite.com/home/mercy/Documents/blog/Hexo/public/images/js-inheried.png">
-<meta property="og:image" content="http://yoursite.com/public/images/proto2.png">
-<meta property="og:updated_time" content="2016-12-19T08:42:02.832Z">
+万物皆空 ，从上图可以">
+<meta property="og:image" content="http://yoursite.com/images/js-inheried.png">
+<meta property="og:image" content="http://yoursite.com/images/proto1.png">
+<meta property="og:image" content="http://yoursite.com/images/proto2.png">
+<meta property="og:updated_time" content="2016-12-20T01:53:40.066Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript 对象.md">
-<meta name="twitter:description" content="JavaScript内置对象
-javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String,  Number, Boolean.
+<meta name="twitter:description" content="本文参考： http://www.jianshu.com/p/3bb6f208e459
+
+JavaScript内置对象
+javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean.
 
 JavaScript的祖先和两位长老
 
-万物皆空 ，从上图可以看出来，JavaScript的祖先 NULL ，而两位长老分别是： Object.prot">
-<meta name="twitter:image" content="http://yoursite.com/home/mercy/Documents/blog/Hexo/public/images/js-inheried.png">
+万物皆空 ，从上图可以">
+<meta name="twitter:image" content="http://yoursite.com/images/js-inheried.png">
 
 
 
@@ -329,25 +336,41 @@ JavaScript的祖先和两位长老
       
 
       
-        <h2 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h2><ul>
-<li>javascript 有很多内置对象, 如：Object, Function, Array, Date, RegExp, Math, Error, Symbol, String,  Number, Boolean.</li>
+        <blockquote>
+<p>本文参考： <a href="http://www.jianshu.com/p/3bb6f208e459" target="_blank" rel="external">http://www.jianshu.com/p/3bb6f208e459</a></p>
+</blockquote>
+<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
+<li>javascript 有很多内置对象, 如：<strong>Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean</strong>.</li>
 </ul>
-<h2 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h2><p><img src="/home/mercy/Documents/blog/Hexo/public/images/js-inheried.png" alt=""></p>
-<ul>
+<h1 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h1><p><img src="/images/js-inheried.png" alt=""></p>
+<ol>
 <li><p><strong>万物皆空</strong> ，从上图可以看出来，JavaScript的祖先 <strong>NULL</strong> ，而两位长老分别是： <strong>Object.prototype</strong>、<strong>Function.prototype</strong> 。</p>
 </li>
-<li><p>原型指针（<strong>__proto__</strong>):和原型对象(<strong>prototype</strong>)</p>
-<ol>
-<li>原型指针（<strong>__proto__</strong>):每个对象都有个原型指针指向该对象的原型对象<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.__proto__ === null    //true,所以Object.prototype的原型是null。</div></pre></td></tr></table></figure>
+<li><p>原型指针（<strong>__proto__</strong>)和原型对象(<strong>prototype</strong>)</p>
+<p>1).  原型指针（<strong>__proto__</strong>):</p>
+<pre><code>每个对象都有个原型指针指向该对象的原型对象
+</code></pre> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Object.prototype.__proto__ === null    //true,所以Object.prototype的原型是null。</div></pre></td></tr></table></figure>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var Person = function(name)&#123;</div><div class="line">this.name = name;</div><div class="line">&#125;;</div><div class="line">p1 = new Person(&apos;zhnagsan&apos;);</div><div class="line">p2 = new Person(&apos;lisi&apos;);</div><div class="line">p1.__proto__===Person.prototype     //true</div><div class="line">p2.__proto__===Person.prototype     //true</div><div class="line">p1.__proto__ === p2.__proto__       //true</div><div class="line">Person.__proto__ === Function.prototype     //true</div><div class="line">Person.__proto__.__proto__ ===Object.prototype     //true</div><div class="line">Person.__proto__.__proto__.__proto__ === null     //true</div></pre></td></tr></table></figure>
+<p> 值得注意的是，按照语言标准，__proto__ 属性只有浏览器才需要部署，其他环境可以没有这个属性，而且前后的两根下划线，表示它本质是一个内部属性，不应该对使用者暴露。因此，应该尽量少用这个属性，而是用Object.getPrototypeof和Object.setPrototypeOf，进行原型对象的读写操作。</p>
+<p>2). 原型对象（<strong>prototype</strong>）:<br>   每个函数对象都有 <strong>prototype</strong> 属性，这里需要注意的是：只有函数对象才有 <strong>prototype</strong> 属性,函数对象也是对象，同时也拥有 __proto__ 属性，指向 <strong>Function.prototype</strong> .</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var Person = function(name)&#123;</div><div class="line">this.name=name;</div><div class="line">&#125;</div><div class="line">console.log(Person.prototype);  // --&gt; Object &#123;...&#125;</div><div class="line">Person.__proto__ === Function.prototype;     // true</div></pre></td></tr></table></figure>
+<p> 每个原型对象都有自己的构造函数 constructor,并且构造函数指向对象本身：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Person.prototype.constructor === Person     //true, Person.prototype.constructor指向对象本身</div></pre></td></tr></table></figure>
+<p> 一般将一些对象公用的方法定义在对象的原型对象里：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">Person.prototype.sayName =function sayName()&#123;</div><div class="line">console.log(this.name);</div><div class="line">&#125;</div><div class="line">p1 = new Person(&apos;zhnagsan&apos;);</div><div class="line">p2 = new Person(&apos;lisi&apos;);</div><div class="line">console.log(p1.sayName());    // zhangsan</div><div class="line">console.log(p2.sayName());    //lisi</div></pre></td></tr></table></figure>
+<p>3). 用两张图来表示原型对象和原型指针的关系：</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var a = new Array();</div></pre></td></tr></table></figure>
+<p> <img src="/images/proto1.png" alt=""></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var Foo = function() &#123;&#125;</div><div class="line">var a = new Foo();</div></pre></td></tr></table></figure>
+<p> <img src="/images/proto2.png" alt=""></p>
+</li>
+<li><p>再说两位长老<br>从上可以看书出，JavaScript中的两位长老 <strong>Object.prototype</strong>,<strong>Function.prototype</strong>。可以这样总结这两个对象：</p>
+<blockquote>
+<p><strong>Object.prototype</strong> 是所有函数对象的原型对象的原型（即 *.prototype.__proto__ 所指的对象）,也是普通对象的原型<br> <strong>Function.prototype</strong> 是所有函数对象的原型（即 *.__proto__)<br> ps： 这里的 * 都指的是 函数对象。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;a:1&#125;;</div><div class="line">obj.__proto__ === Object.prototype   // true</div><div class="line">var fun = function()&#123;&#125;  </div><div class="line">fun.__proto__ === Function.prototype    //  true</div><div class="line">fun.prototype instanceof Object     //true</div><div class="line">fun.prototype.__proto__   //true</div></pre></td></tr></table></figure>
 </li>
 </ol>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">var Person = function(name)&#123;</div><div class="line">  this.name = name;</div><div class="line">&#125;;</div><div class="line">p1 = new Person(&apos;zhnagsan&apos;);</div><div class="line">p2 = new Person(&apos;lisi&apos;);</div><div class="line">p1.__proto__===Person.prototype     //true</div><div class="line">p2.__proto__===Person.prototype     //true</div><div class="line">p1.__proto__ === p2.__proto__       //true</div><div class="line">Person.__proto__ === Function.prototype     //true</div><div class="line">Person.__proto__.__proto__ ===Object.prototype     //true</div><div class="line">Person.__proto__.__proto__.__proto__ === null     //true</div><div class="line">```   </div><div class="line">值得注意的是，按照语言标准，\__proto__ 属性只有浏览器才需要部署，其他环境可以没有这个属性，而且前后的两根下划线，表示它本质是一个内部属性，不应该对使用者暴露。因此，应该尽量少用这个属性，而是用Object.getPrototypeof和Object.setPrototypeOf，进行原型对象的读写操作。</div><div class="line"></div><div class="line"> 2. 原型对象（__prototype__）: 每个函数对象都有 __prototype__ 属性，这里需要注意的是：只有函数对象才有 __prototype__ 属性,函数对象也是对象，同时也拥有 \__proto\__ 属性，指向 **Function.prototype** .</div></pre></td></tr></table></figure>
-<p>var Person = function(name){<br>  this.name=name;<br>}<br>console.log(Person.prototype);  // –&gt; Object {…}<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">每个原型对象都有自己的构造函数 constructor,并且：</div></pre></td></tr></table></figure></p>
-<p>Person.prototype.constructor === Person     //true, Person.prototype.constructor指向对象本身<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">一般将一些对象公用的方法定义在对象的原型对象里：</div></pre></td></tr></table></figure></p>
-<p>Person.prototype.sayName =function sayName(){<br>  console.log(this.name);<br>}<br>p1 = new Person(‘zhnagsan’);<br>p2 = new Person(‘lisi’);<br>console.log(p1.sayName());    // zhangsan<br>console.log(p2.sayName());    //lisi<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"> 3. 用两张图来表示原型对象和原型指针的关系：     </div><div class="line">```   </div><div class="line">var a = new Array();   </div><div class="line">```   </div><div class="line">![](public/images/proto1.png)</div></pre></td></tr></table></figure></p>
-<p>var Foo = function() {}<br>var a = new Foo();<br>```<br><img src="public/images/proto2.png" alt=""></p>
 
       
     </div>
@@ -374,8 +397,8 @@ JavaScript的祖先和两位长老
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/16/javascript原型世界-md/" rel="next" title="javascript原型世界.md">
-                <i class="fa fa-chevron-left"></i> javascript原型世界.md
+              <a href="/2016/12/16/linux-常用命令总结-md/" rel="next" title="linux 常用命令总结.md">
+                <i class="fa fa-chevron-left"></i> linux 常用命令总结.md
               </a>
             
           </div>
@@ -450,7 +473,7 @@ JavaScript的祖先和两位长老
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">Artikel</span>
             </a>
           </div>
@@ -488,7 +511,7 @@ JavaScript的祖先和两位长老
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript内置对象"><span class="nav-number">1.</span> <span class="nav-text">JavaScript内置对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript的祖先和两位长老"><span class="nav-number">2.</span> <span class="nav-text">JavaScript的祖先和两位长老</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript内置对象"><span class="nav-number">1.</span> <span class="nav-text">JavaScript内置对象</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JavaScript的祖先和两位长老"><span class="nav-number">2.</span> <span class="nav-text">JavaScript的祖先和两位长老</span></a></li></ol></div>
             
 
           </div>
