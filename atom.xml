@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-20T08:38:27.017Z</updated>
+  <updated>2016-12-23T00:47:06.957Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java static、final关键字.md</title>
+    <link href="http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/"/>
+    <id>http://yoursite.com/2016/12/22/java-static、final关键字-md/</id>
+    <published>2016-12-22T08:00:12.000Z</published>
+    <updated>2016-12-23T00:47:06.957Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="static-的基本用法和执行顺序"><a href="#static-的基本用法和执行顺序" class="headerlink" title="static 的基本用法和执行顺序"></a>static 的基本用法和执行顺序</h2><p>基础概念</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。</div></pre></td></tr></table></figure>
+<p>这里补充一下，类何时被加载：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">- 创建类实例时。</div><div class="line">- 访问类的静态变量（注意这里指的是变量，如果是静态常量&lt;static final&gt;则不会初始化类，这个后面会讲到）。</div><div class="line">- 调用类的静态方法时。</div><div class="line">- 反射（如：Class.forName(xxx.xxx.XXXX)。</div><div class="line">- 该类子类被初始化时，父类也会被初始化。（但是直接通过子类引用调用父类静态元素，子类不会被加载）</div><div class="line">- Java虚拟机被标明为启动类的类（如 main() 方法）</div></pre></td></tr></table></figure>
+<p>有了上面的概念，我再来看代码</p>
+<h3 id="执行顺序"><a href="#执行顺序" class="headerlink" title="执行顺序"></a>执行顺序</h3><p>准备：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Grandpa</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String grandpa_value=<span class="string">"I am your grandpa..."</span>;</div><div class="line"></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		System.out.println(<span class="string">"Grandpa static area..."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Grandpa</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Grandpa's constructor"</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StaticFinalDemo</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Grandpa gp1 = <span class="keyword">new</span> Grandpa();</div><div class="line">		Grandpa gp2 = <span class="keyword">new</span> Grandpa();</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Grandpa&apos;s constructor...</div></pre></td></tr></table></figure>
+<p>上面的例子就是典型的在新建 <strong>Grandpa</strong> 实例时，时加载 <strong>Grandpa</strong> 类,且由static修饰块或字段优先于类的构造函数执行，且类只执行一次（每次new对象时都会执行构造函数）。</p>
+<h3 id="子类初始化父类"><a href="#子类初始化父类" class="headerlink" title="子类初始化父类"></a>子类初始化父类</h3><p>基于上面的代码，我们加上：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Father extends Grandpa&#123;</div><div class="line">	public static String father_value=&quot;I am your father...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(father_value);</div><div class="line">		System.out.println(&quot;Father static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Father() &#123;</div><div class="line">		System.out.println(&quot;Father&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Son extends Father&#123;</div><div class="line">	public static String son_value=&quot;I am Son...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(son_value);</div><div class="line">		System.out.println(&quot;Son static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Son() &#123;</div><div class="line">		System.out.println(&quot;Son&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>再在修改 StaticFinalDemo 的 main() 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Son s = new Son();</div></pre></td></tr></table></figure>
+<p>执行结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">I am Son...</div><div class="line">Son static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div><div class="line">Son&apos;s constructor...</div></pre></td></tr></table></figure>
+<p>可以看到，在初始化Son类时，Son父类（Father、Grandp）都被初始化了，且顺序是 Grandpa &gt; Father &gt; Son</p>
+<p>我们再次修改一下 main() 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Father f = new Father();</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div></pre></td></tr></table></figure>
+<p>可以看出，父类 Father 的初始化没有初始化子类 Son。</p>
+<h3 id="其他-static-使用场景"><a href="#其他-static-使用场景" class="headerlink" title="其他 static 使用场景"></a>其他 static 使用场景</h3><h4 id="1-静态内部类"><a href="#1-静态内部类" class="headerlink" title="1. 静态内部类"></a>1. 静态内部类</h4><h4 id="2-静态导包"><a href="#2-静态导包" class="headerlink" title="2. 静态导包"></a>2. 静态导包</h4><h2 id="final-使用"><a href="#final-使用" class="headerlink" title="final 使用"></a>final 使用</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;static-的基本用法和执行顺序&quot;&gt;&lt;a href=&quot;#static-的基本用法和执行顺序&quot; class=&quot;headerlink&quot; title=&quot;static 的基本用法和执行顺序&quot;&gt;&lt;/a&gt;static 的基本用法和执行顺序&lt;/h2&gt;&lt;p&gt;基础概念&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+    
+      <category term="java" scheme="http://yoursite.com/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>postgresql 索引.md</title>

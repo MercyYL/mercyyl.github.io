@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/</loc>
+    
+    <lastmod>2016-12-23T00:47:06.957Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2016-12-23T00:38:55.489Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/</loc>
     
     <lastmod>2016-12-20T08:38:27.017Z</lastmod>
