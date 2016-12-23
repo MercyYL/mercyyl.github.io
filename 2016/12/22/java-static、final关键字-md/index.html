@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next mist use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -98,7 +98,7 @@
 1被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。
 这里补充一下，类何时被加载：
 123456- 创建类实例时。- 访问类的静态变量（注意这里指的是变量，如果是静态常量&amp;lt;static final&amp;gt;则不会初始化类，这个后面会讲到）。- 调用类的静态方法时。- 反射（">
-<meta property="og:updated_time" content="2016-12-23T00:47:06.957Z">
+<meta property="og:updated_time" content="2016-12-23T00:48:38.661Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java static、final关键字.md">
 <meta name="twitter:description" content="static 的基本用法和执行顺序基础概念
@@ -112,7 +112,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Mist',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
     fancybox: true,
     motion: true,
@@ -333,16 +333,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Grandpa&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>上面的例子就是典型的在新建 <strong>Grandpa</strong> 实例时，时加载 <strong>Grandpa</strong> 类,且由static修饰块或字段优先于类的构造函数执行，且类只执行一次（每次new对象时都会执行构造函数）。</p>
 <h3 id="子类初始化父类"><a href="#子类初始化父类" class="headerlink" title="子类初始化父类"></a>子类初始化父类</h3><p>基于上面的代码，我们加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Father extends Grandpa&#123;</div><div class="line">	public static String father_value=&quot;I am your father...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(father_value);</div><div class="line">		System.out.println(&quot;Father static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Father() &#123;</div><div class="line">		System.out.println(&quot;Father&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Son extends Father&#123;</div><div class="line">	public static String son_value=&quot;I am Son...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(son_value);</div><div class="line">		System.out.println(&quot;Son static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Son() &#123;</div><div class="line">		System.out.println(&quot;Son&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">Grandpa</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String father_value=<span class="string">"I am your father..."</span>;</div><div class="line"></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		System.out.println(father_value);</div><div class="line">		System.out.println(<span class="string">"Father static area..."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Father's constructor..."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String son_value=<span class="string">"I am Son..."</span>;</div><div class="line"></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		System.out.println(son_value);</div><div class="line">		System.out.println(<span class="string">"Son static area..."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Son</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Son's constructor..."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>再在修改 StaticFinalDemo 的 main() 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Son s = new Son();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Son s = <span class="keyword">new</span> Son();</div></pre></td></tr></table></figure>
 <p>执行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">I am Son...</div><div class="line">Son static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div><div class="line">Son&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>可以看到，在初始化Son类时，Son父类（Father、Grandp）都被初始化了，且顺序是 Grandpa &gt; Father &gt; Son</p>
 <p>我们再次修改一下 main() 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Father f = new Father();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Father f = <span class="keyword">new</span> Father();</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>可以看出，父类 Father 的初始化没有初始化子类 Son。</p>
+<p>未完待续…</p>
 <h3 id="其他-static-使用场景"><a href="#其他-static-使用场景" class="headerlink" title="其他 static 使用场景"></a>其他 static 使用场景</h3><h4 id="1-静态内部类"><a href="#1-静态内部类" class="headerlink" title="1. 静态内部类"></a>1. 静态内部类</h4><h4 id="2-静态导包"><a href="#2-静态导包" class="headerlink" title="2. 静态导包"></a>2. 静态导包</h4><h2 id="final-使用"><a href="#final-使用" class="headerlink" title="final 使用"></a>final 使用</h2>
       
     </div>
@@ -461,7 +462,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">Tags</span>
               </a>
             </div>
@@ -539,7 +540,7 @@
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Mist
+    NexT.Pisces
   </a>
 </div>
 
@@ -605,6 +606,13 @@
 
   
   
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
 
   
   <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-23T00:47:06.957Z</updated>
+  <updated>2016-12-23T00:48:38.661Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/"/>
     <id>http://yoursite.com/2016/12/22/java-static、final关键字-md/</id>
     <published>2016-12-22T08:00:12.000Z</published>
-    <updated>2016-12-23T00:47:06.957Z</updated>
+    <updated>2016-12-23T00:48:38.661Z</updated>
     
     <content type="html"><![CDATA[<h2 id="static-的基本用法和执行顺序"><a href="#static-的基本用法和执行顺序" class="headerlink" title="static 的基本用法和执行顺序"></a>static 的基本用法和执行顺序</h2><p>基础概念</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。</div></pre></td></tr></table></figure>
@@ -33,16 +33,17 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Grandpa&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>上面的例子就是典型的在新建 <strong>Grandpa</strong> 实例时，时加载 <strong>Grandpa</strong> 类,且由static修饰块或字段优先于类的构造函数执行，且类只执行一次（每次new对象时都会执行构造函数）。</p>
 <h3 id="子类初始化父类"><a href="#子类初始化父类" class="headerlink" title="子类初始化父类"></a>子类初始化父类</h3><p>基于上面的代码，我们加上：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">class Father extends Grandpa&#123;</div><div class="line">	public static String father_value=&quot;I am your father...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(father_value);</div><div class="line">		System.out.println(&quot;Father static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Father() &#123;</div><div class="line">		System.out.println(&quot;Father&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">class Son extends Father&#123;</div><div class="line">	public static String son_value=&quot;I am Son...&quot;;</div><div class="line"></div><div class="line">	static&#123;</div><div class="line">		System.out.println(son_value);</div><div class="line">		System.out.println(&quot;Son static area...&quot;);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	public Son() &#123;</div><div class="line">		System.out.println(&quot;Son&apos;s constructor...&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Father</span> <span class="keyword">extends</span> <span class="title">Grandpa</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String father_value=<span class="string">"I am your father..."</span>;</div><div class="line"></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		System.out.println(father_value);</div><div class="line">		System.out.println(<span class="string">"Father static area..."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Father</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Father's constructor..."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Son</span> <span class="keyword">extends</span> <span class="title">Father</span></span>&#123;</div><div class="line">	<span class="keyword">public</span> <span class="keyword">static</span> String son_value=<span class="string">"I am Son..."</span>;</div><div class="line"></div><div class="line">	<span class="keyword">static</span>&#123;</div><div class="line">		System.out.println(son_value);</div><div class="line">		System.out.println(<span class="string">"Son static area..."</span>);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Son</span><span class="params">()</span> </span>&#123;</div><div class="line">		System.out.println(<span class="string">"Son's constructor..."</span>);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>再在修改 StaticFinalDemo 的 main() 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Son s = new Son();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Son s = <span class="keyword">new</span> Son();</div></pre></td></tr></table></figure>
 <p>执行结果：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">I am Son...</div><div class="line">Son static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div><div class="line">Son&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>可以看到，在初始化Son类时，Son父类（Father、Grandp）都被初始化了，且顺序是 Grandpa &gt; Father &gt; Son</p>
 <p>我们再次修改一下 main() 方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Father f = new Father();</div></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Father f = <span class="keyword">new</span> Father();</div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">I am your grandpa...</div><div class="line">Grandpa static area...</div><div class="line">I am your father...</div><div class="line">Father static area...</div><div class="line">Grandpa&apos;s constructor...</div><div class="line">Father&apos;s constructor...</div></pre></td></tr></table></figure>
 <p>可以看出，父类 Father 的初始化没有初始化子类 Son。</p>
+<p>未完待续…</p>
 <h3 id="其他-static-使用场景"><a href="#其他-static-使用场景" class="headerlink" title="其他 static 使用场景"></a>其他 static 使用场景</h3><h4 id="1-静态内部类"><a href="#1-静态内部类" class="headerlink" title="1. 静态内部类"></a>1. 静态内部类</h4><h4 id="2-静态导包"><a href="#2-静态导包" class="headerlink" title="2. 静态导包"></a>2. 静态导包</h4><h2 id="final-使用"><a href="#final-使用" class="headerlink" title="final 使用"></a>final 使用</h2>]]></content>
     
     <summary type="html">
@@ -62,7 +63,7 @@
     <link href="http://yoursite.com/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/"/>
     <id>http://yoursite.com/2016/12/20/postgresql-索引-md/</id>
     <published>2016-12-20T07:20:57.000Z</published>
-    <updated>2016-12-20T08:38:27.017Z</updated>
+    <updated>2016-12-23T00:52:56.785Z</updated>
     
     <content type="html"><![CDATA[<h2 id="索引的基础知识"><a href="#索引的基础知识" class="headerlink" title="索引的基础知识"></a>索引的基础知识</h2><p>索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。</p>
 <p>例如，如果想在一本书中引用的所有页面讨论某个话题，先参考索引按字母顺序列出所有目录主题，然后转到一个或多个特定的页码。</p>
@@ -123,6 +124,8 @@
     </summary>
     
     
+      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
   </entry>
   
   <entry>
@@ -130,7 +133,7 @@
     <link href="http://yoursite.com/2016/12/19/javascript-%E5%AF%B9%E8%B1%A1-md/"/>
     <id>http://yoursite.com/2016/12/19/javascript-对象-md/</id>
     <published>2016-12-19T02:09:18.000Z</published>
-    <updated>2016-12-20T07:11:30.117Z</updated>
+    <updated>2016-12-23T00:52:37.717Z</updated>
     
     <content type="html"><![CDATA[<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
 <li>javascript 有很多内置对象, 如：<strong>Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean</strong>.</li>
@@ -177,6 +180,8 @@
     </summary>
     
     
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
   </entry>
   
   <entry>
@@ -184,7 +189,7 @@
     <link href="http://yoursite.com/2016/12/16/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93-md/"/>
     <id>http://yoursite.com/2016/12/16/linux-常用命令总结-md/</id>
     <published>2016-12-16T04:43:57.000Z</published>
-    <updated>2016-12-16T04:45:08.202Z</updated>
+    <updated>2016-12-23T00:52:43.485Z</updated>
     
     <content type="html"><![CDATA[<ol>
 <li><p>ls:    </p>
@@ -228,6 +233,8 @@
     
     </summary>
     
+    
+      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
     
   </entry>
   
