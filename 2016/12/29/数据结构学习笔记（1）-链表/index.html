@@ -101,7 +101,7 @@
 <meta property="og:image" content="http://yoursite.com/images/table.png">
 <meta property="og:image" content="http://yoursite.com/images/single-table.png">
 <meta property="og:image" content="http://yoursite.com/images/double-table.png">
-<meta property="og:updated_time" content="2016-12-30T07:53:23.452Z">
+<meta property="og:updated_time" content="2017-01-03T00:19:59.668Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构学习笔记（1） -- 链表">
 <meta name="twitter:description" content="$ 基础知识在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）
@@ -200,7 +200,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -210,7 +210,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -289,7 +289,7 @@
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              <span class="post-meta-item-text">Veröffentlicht am</span>
+              <span class="post-meta-item-text">Posted on</span>
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2016-12-29T11:50:58+08:00">
                 2016-12-29
               </time>
@@ -336,14 +336,21 @@
 <p>链表分为单向链表，双向链表，单向循环链表，双向循环链表。</p>
 </blockquote>
 <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><blockquote>
-<p>单链表的每个节点上有两个部分，一个存储元素，另一个存储先一个节点地址的指针，其中尾节点的指针是null</p>
+<p><strong>单链表</strong> 的每个节点上有两个部分，一个存储元素，另一个存储先一个节点地址的指针，其中尾节点的指针是null</p>
 </blockquote>
 <p>单链表存储结构图： <img src="/images/single-table.png" alt=""></p>
-<p>单向循环链表则是将尾节点的next指针指向头节点，这样就形成了环装（此处不给图了。）</p>
-<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">双向链表每个节点有3个部分：上一个节点的指针，当前节点，下个节点的指针。其中头节点的pre指针是null，而尾节点的next指针是null</div></pre></td></tr></table></figure>
-<p>双链表存储结果图： <img src="/images/double-table.png" alt=""></p>
-<p>双向循环链表则是将尾节点的next指针指向头节点，头节点的pre指针指向尾节点，这样就形成了环装（此处不给图了。）</p>
-<h2 id="Java代码实现单链表和双向链表"><a href="#Java代码实现单链表和双向链表" class="headerlink" title="$ Java代码实现单链表和双向链表"></a>$ Java代码实现单链表和双向链表</h2>
+<blockquote>
+<p><strong>单向循环链表</strong> 则是将尾节点的next指针指向头节点，这样就形成了环装（此处不给图了。）</p>
+</blockquote>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><blockquote>
+<p><strong>双向链表</strong> 每个节点有3个部分：上一个节点的指针，当前节点，下个节点的指针。其中头节点的pre指针是null，而尾节点的next指针是null</p>
+</blockquote>
+<p>双链表存储结构图： <img src="/images/double-table.png" alt=""></p>
+<blockquote>
+<p><strong>双向循环链表</strong> 则是将尾节点的next指针指向头节点，头节点的pre指针指向尾节点，这样就形成了环装（此处不给图了。）</p>
+</blockquote>
+<h2 id="Java代码实现单链表和双向链表"><a href="#Java代码实现单链表和双向链表" class="headerlink" title="$ Java代码实现单链表和双向链表"></a>$ Java代码实现单链表和双向链表</h2><h3 id="单链表Java实现"><a href="#单链表Java实现" class="headerlink" title="单链表Java实现"></a>单链表Java实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -432,10 +439,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -452,7 +459,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">7</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -462,7 +469,7 @@
             <div class="site-state-item site-state-tags">
               <a href="/tags">
                 <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Tags</span>
+                <span class="site-state-item-name">tags</span>
               </a>
             </div>
           
@@ -503,7 +510,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">$ 基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">2.</span> <span class="nav-text">$ 链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表"><span class="nav-number">2.1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向链表"><span class="nav-number">2.2.</span> <span class="nav-text">双向链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java代码实现单链表和双向链表"><span class="nav-number">3.</span> <span class="nav-text">$ Java代码实现单链表和双向链表</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">$ 基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链表"><span class="nav-number">2.</span> <span class="nav-text">$ 链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表"><span class="nav-number">2.1.</span> <span class="nav-text">单链表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双向链表"><span class="nav-number">2.2.</span> <span class="nav-text">双向链表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java代码实现单链表和双向链表"><span class="nav-number">3.</span> <span class="nav-text">$ Java代码实现单链表和双向链表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单链表Java实现"><span class="nav-number">3.1.</span> <span class="nav-text">单链表Java实现</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -524,7 +531,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2016</span>
+  <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -533,7 +540,7 @@
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">

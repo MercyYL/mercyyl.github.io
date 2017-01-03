@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-30T07:53:23.452Z</updated>
+  <updated>2017-01-03T00:19:59.668Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E9%93%BE%E8%A1%A8/"/>
     <id>http://yoursite.com/2016/12/29/数据结构学习笔记（1）-链表/</id>
     <published>2016-12-29T03:50:58.000Z</published>
-    <updated>2016-12-30T07:53:23.452Z</updated>
+    <updated>2017-01-03T00:19:59.668Z</updated>
     
     <content type="html"><![CDATA[<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="$ 基础知识"></a>$ 基础知识</h2><p>在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）</p>
 <ul>
@@ -32,14 +32,21 @@
 <p>链表分为单向链表，双向链表，单向循环链表，双向循环链表。</p>
 </blockquote>
 <h3 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h3><blockquote>
-<p>单链表的每个节点上有两个部分，一个存储元素，另一个存储先一个节点地址的指针，其中尾节点的指针是null</p>
+<p><strong>单链表</strong> 的每个节点上有两个部分，一个存储元素，另一个存储先一个节点地址的指针，其中尾节点的指针是null</p>
 </blockquote>
 <p>单链表存储结构图： <img src="/images/single-table.png" alt=""></p>
-<p>单向循环链表则是将尾节点的next指针指向头节点，这样就形成了环装（此处不给图了。）</p>
-<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">双向链表每个节点有3个部分：上一个节点的指针，当前节点，下个节点的指针。其中头节点的pre指针是null，而尾节点的next指针是null</div></pre></td></tr></table></figure>
-<p>双链表存储结果图： <img src="/images/double-table.png" alt=""></p>
-<p>双向循环链表则是将尾节点的next指针指向头节点，头节点的pre指针指向尾节点，这样就形成了环装（此处不给图了。）</p>
-<h2 id="Java代码实现单链表和双向链表"><a href="#Java代码实现单链表和双向链表" class="headerlink" title="$ Java代码实现单链表和双向链表"></a>$ Java代码实现单链表和双向链表</h2>]]></content>
+<blockquote>
+<p><strong>单向循环链表</strong> 则是将尾节点的next指针指向头节点，这样就形成了环装（此处不给图了。）</p>
+</blockquote>
+<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><blockquote>
+<p><strong>双向链表</strong> 每个节点有3个部分：上一个节点的指针，当前节点，下个节点的指针。其中头节点的pre指针是null，而尾节点的next指针是null</p>
+</blockquote>
+<p>双链表存储结构图： <img src="/images/double-table.png" alt=""></p>
+<blockquote>
+<p><strong>双向循环链表</strong> 则是将尾节点的next指针指向头节点，头节点的pre指针指向尾节点，这样就形成了环装（此处不给图了。）</p>
+</blockquote>
+<h2 id="Java代码实现单链表和双向链表"><a href="#Java代码实现单链表和双向链表" class="headerlink" title="$ Java代码实现单链表和双向链表"></a>$ Java代码实现单链表和双向链表</h2><h3 id="单链表Java实现"><a href="#单链表Java实现" class="headerlink" title="单链表Java实现"></a>单链表Java实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+]]></content>
     
     <summary type="html">
     
