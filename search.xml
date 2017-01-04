@@ -1,28 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+<search>
   
-  <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2017-01-04T02:54:39.954Z</updated>
-  <id>http://yoursite.com/</id>
-  
-  <author>
-    <name>Mercy</name>
     
-  </author>
-  
-  <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>数据结构学习笔记（1） -- 表</title>
-    <link href="http://yoursite.com/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E8%A1%A8/"/>
-    <id>http://yoursite.com/2016/12/29/数据结构学习笔记（1）-表/</id>
-    <published>2016-12-29T03:50:58.000Z</published>
-    <updated>2017-01-04T02:54:39.954Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）</p>
+    <entry>
+      <title><![CDATA[数据结构学习笔记（1） -- 表]]></title>
+      <url>http://yoursite.com/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E8%A1%A8/</url>
+      <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）</p>
 <ul>
 <li>顺序表： 即线性表用顺序存储结构保存数据，数据是连续的。</li>
 <li>链表： 链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。 相比于线性表顺序结构，操作复杂。由于不必须按顺序存储，链表在插入的时候可以达到O(1)的复杂度，比另一种线性表顺序表快得多，但是查找一个节点或者访问特定编号的节点则需要O(n)的时间，而顺序表相应的时间复杂度分别是O(logn)和O(1)。 <a id="more"></a> 顺序表和链表的简单对比图： <img src="/images/table.png" alt=""></li>
@@ -62,29 +46,12 @@
 <p>推荐大家自己动手对比一下 <strong>LinkedList</strong> 和 <strong>ArrayList</strong> 的增删查改的速度，其实 <strong>ArrayList</strong> 在增删时不一定比 <strong>LinkedList</strong> 慢。</p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;基础知识&quot;&gt;&lt;a href=&quot;#基础知识&quot; class=&quot;headerlink&quot; title=&quot;基础知识&quot;&gt;&lt;/a&gt;基础知识&lt;/h1&gt;&lt;p&gt;在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;顺序表： 即线性表用顺序存储结构保存数据，数据是连续的。&lt;/li&gt;
-&lt;li&gt;链表： 链表是一种物理存储单元上非连续、非顺序的存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的。链表由一系列结点（链表中每一个元素称为结点）组成，结点可以在运行时动态生成。每个结点包括两个部分：一个是存储数据元素的数据域，另一个是存储下一个结点地址的指针域。 相比于线性表顺序结构，操作复杂。由于不必须按顺序存储，链表在插入的时候可以达到O(1)的复杂度，比另一种线性表顺序表快得多，但是查找一个节点或者访问特定编号的节点则需要O(n)的时间，而顺序表相应的时间复杂度分别是O(logn)和O(1)。
-    
-    </summary>
-    
-    
-      <category term="数据结构" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自定义checkbox样式</title>
-    <link href="http://yoursite.com/2016/12/28/%E8%87%AA%E5%AE%9A%E4%B9%89checkbox%E6%A0%B7%E5%BC%8F/"/>
-    <id>http://yoursite.com/2016/12/28/自定义checkbox样式/</id>
-    <published>2016-12-28T01:01:09.000Z</published>
-    <updated>2017-01-04T01:08:17.294Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="通过css来自定义checkbox样式"><a href="#通过css来自定义checkbox样式" class="headerlink" title="通过css来自定义checkbox样式"></a>通过css来自定义checkbox样式</h1><p>截图： 原生的 checkbox 和 自定义 checkbox 比较</p>
+    <entry>
+      <title><![CDATA[自定义checkbox样式]]></title>
+      <url>http://yoursite.com/2016/12/28/%E8%87%AA%E5%AE%9A%E4%B9%89checkbox%E6%A0%B7%E5%BC%8F/</url>
+      <content type="html"><![CDATA[<h1 id="通过css来自定义checkbox样式"><a href="#通过css来自定义checkbox样式" class="headerlink" title="通过css来自定义checkbox样式"></a>通过css来自定义checkbox样式</h1><p>截图： 原生的 checkbox 和 自定义 checkbox 比较</p>
 <p><img src="/images/checkbox-before.png" alt=""><img src="/images/checkbox-after.png" alt=""><br><a id="more"></a></p>
 <h1 id="思路与步骤"><a href="#思路与步骤" class="headerlink" title="思路与步骤"></a>思路与步骤</h1><ol>
 <li><p>首先禁止默认的checkbox显示</p>
@@ -103,25 +70,12 @@
 </li>
 </ol>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;通过css来自定义checkbox样式&quot;&gt;&lt;a href=&quot;#通过css来自定义checkbox样式&quot; class=&quot;headerlink&quot; title=&quot;通过css来自定义checkbox样式&quot;&gt;&lt;/a&gt;通过css来自定义checkbox样式&lt;/h1&gt;&lt;p&gt;截图： 原生的 checkbox 和 自定义 checkbox 比较&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/checkbox-before.png&quot; alt=&quot;&quot;&gt;&lt;img src=&quot;/images/checkbox-after.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>java static、final关键字.md</title>
-    <link href="http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/"/>
-    <id>http://yoursite.com/2016/12/22/java-static、final关键字-md/</id>
-    <published>2016-12-22T08:00:12.000Z</published>
-    <updated>2017-01-04T01:07:46.238Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="static-的基本用法和执行顺序"><a href="#static-的基本用法和执行顺序" class="headerlink" title="static 的基本用法和执行顺序"></a>static 的基本用法和执行顺序</h2><p>基础概念</p>
+    <entry>
+      <title><![CDATA[java static、final关键字.md]]></title>
+      <url>http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/</url>
+      <content type="html"><![CDATA[<h2 id="static-的基本用法和执行顺序"><a href="#static-的基本用法和执行顺序" class="headerlink" title="static 的基本用法和执行顺序"></a>static 的基本用法和执行顺序</h2><p>基础概念</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <p>这里补充一下，类何时被加载：</p>
@@ -145,27 +99,12 @@
 <p>可以看出，父类 Father 的初始化没有初始化子类 Son。</p>
 <p>未完待续…</p>
 <h3 id="其他-static-使用场景"><a href="#其他-static-使用场景" class="headerlink" title="其他 static 使用场景"></a>其他 static 使用场景</h3><h4 id="1-静态内部类"><a href="#1-静态内部类" class="headerlink" title="1. 静态内部类"></a>1. 静态内部类</h4><h4 id="2-静态导包"><a href="#2-静态导包" class="headerlink" title="2. 静态导包"></a>2. 静态导包</h4><h2 id="final-使用"><a href="#final-使用" class="headerlink" title="final 使用"></a>final 使用</h2>]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;static-的基本用法和执行顺序&quot;&gt;&lt;a href=&quot;#static-的基本用法和执行顺序&quot; class=&quot;headerlink&quot; title=&quot;static 的基本用法和执行顺序&quot;&gt;&lt;/a&gt;static 的基本用法和执行顺序&lt;/h2&gt;&lt;p&gt;基础概念&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-    
-    </summary>
-    
-    
-      <category term="java" scheme="http://yoursite.com/tags/java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>postgresql 索引.md</title>
-    <link href="http://yoursite.com/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/"/>
-    <id>http://yoursite.com/2016/12/20/postgresql-索引-md/</id>
-    <published>2016-12-20T07:20:57.000Z</published>
-    <updated>2017-01-04T01:08:03.018Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="索引的基础知识"><a href="#索引的基础知识" class="headerlink" title="索引的基础知识"></a>索引的基础知识</h2><p>索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。<br><a id="more"></a><br>例如，如果想在一本书中引用的所有页面讨论某个话题，先参考索引按字母顺序列出所有目录主题，然后转到一个或多个特定的页码。</p>
+    <entry>
+      <title><![CDATA[postgresql 索引.md]]></title>
+      <url>http://yoursite.com/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/</url>
+      <content type="html"><![CDATA[<h2 id="索引的基础知识"><a href="#索引的基础知识" class="headerlink" title="索引的基础知识"></a>索引的基础知识</h2><p>索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。<br><a id="more"></a><br>例如，如果想在一本书中引用的所有页面讨论某个话题，先参考索引按字母顺序列出所有目录主题，然后转到一个或多个特定的页码。</p>
 <p>索引有助于加快SELECT查询和WHERE子句，但它会减慢数据的输入，UPDATE和INSERT语句。索引可以创建或删除的数据没有影响。</p>
 <p>创建索引涉及CREATE INDEX语句，它允许命名的索引，索引指定表的一列或多列，并指示索引是否在升序或降序排列。</p>
 <p>索引也可以是唯一的，类似UNIQUE约束，在列上有一个索引的列或组合索引防止重复项。</p>
@@ -215,26 +154,12 @@
 <p>【易百】<a href="http://www.yiibai.com/html/postgresql/2013/080674.html" target="_blank" rel="external">http://www.yiibai.com/html/postgresql/2013/080674.html</a></p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h2 id=&quot;索引的基础知识&quot;&gt;&lt;a href=&quot;#索引的基础知识&quot; class=&quot;headerlink&quot; title=&quot;索引的基础知识&quot;&gt;&lt;/a&gt;索引的基础知识&lt;/h2&gt;&lt;p&gt;索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="数据库" scheme="http://yoursite.com/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript 对象.md</title>
-    <link href="http://yoursite.com/2016/12/19/javascript-%E5%AF%B9%E8%B1%A1-md/"/>
-    <id>http://yoursite.com/2016/12/19/javascript-对象-md/</id>
-    <published>2016-12-19T02:09:18.000Z</published>
-    <updated>2017-01-04T01:07:50.110Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
+    <entry>
+      <title><![CDATA[javascript 对象.md]]></title>
+      <url>http://yoursite.com/2016/12/19/javascript-%E5%AF%B9%E8%B1%A1-md/</url>
+      <content type="html"><![CDATA[<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
 <li>javascript 有很多内置对象, 如：<strong>Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean</strong>.<a id="more"></a>
 <h1 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h1></li>
 </ul>
@@ -271,27 +196,12 @@
 <p>本文参考： <a href="http://www.jianshu.com/p/3bb6f208e459" target="_blank" rel="external">http://www.jianshu.com/p/3bb6f208e459</a></p>
 </blockquote>
 ]]></content>
+    </entry>
     
-    <summary type="html">
-    
-      &lt;h1 id=&quot;JavaScript内置对象&quot;&gt;&lt;a href=&quot;#JavaScript内置对象&quot; class=&quot;headerlink&quot; title=&quot;JavaScript内置对象&quot;&gt;&lt;/a&gt;JavaScript内置对象&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;javascript 有很多内置对象, 如：&lt;strong&gt;Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean&lt;/strong&gt;.
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>linux 常用命令总结.md</title>
-    <link href="http://yoursite.com/2016/12/16/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93-md/"/>
-    <id>http://yoursite.com/2016/12/16/linux-常用命令总结-md/</id>
-    <published>2016-12-16T04:43:57.000Z</published>
-    <updated>2017-01-04T01:07:59.406Z</updated>
-    
-    <content type="html"><![CDATA[<ol>
+    <entry>
+      <title><![CDATA[linux 常用命令总结.md]]></title>
+      <url>http://yoursite.com/2016/12/16/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93-md/</url>
+      <content type="html"><![CDATA[<ol>
 <li>ls:    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al</div></pre></td></tr></table></figure>
 </li>
 </ol>
@@ -326,37 +236,14 @@
 </li>
 </ol>
 ]]></content>
+    </entry>
     
-    <summary type="html">
+    <entry>
+      <title><![CDATA[first]]></title>
+      <url>http://yoursite.com/2016/12/16/first/</url>
+      <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>]]></content>
+    </entry>
     
-      &lt;ol&gt;
-&lt;li&gt;ls:    &lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;ls -al&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-    
-    </summary>
-    
-    
-      <category term="linux" scheme="http://yoursite.com/tags/linux/"/>
-    
-  </entry>
   
-  <entry>
-    <title>first</title>
-    <link href="http://yoursite.com/2016/12/16/first/"/>
-    <id>http://yoursite.com/2016/12/16/first/</id>
-    <published>2016-12-16T03:48:57.000Z</published>
-    <updated>2016-12-16T03:49:44.794Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h1&gt;
-    
-    </summary>
-    
-    
-  </entry>
   
-</feed>
+</search>
