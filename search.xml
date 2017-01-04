@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[数据结构学习笔记（1） -- 表]]></title>
-      <url>http://yoursite.com/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E8%A1%A8/</url>
+      <url>https://mercyyl.github.io/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E8%A1%A8/</url>
       <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）</p>
 <ul>
 <li>顺序表： 即线性表用顺序存储结构保存数据，数据是连续的。</li>
@@ -50,7 +50,7 @@
     
     <entry>
       <title><![CDATA[自定义checkbox样式]]></title>
-      <url>http://yoursite.com/2016/12/28/%E8%87%AA%E5%AE%9A%E4%B9%89checkbox%E6%A0%B7%E5%BC%8F/</url>
+      <url>https://mercyyl.github.io/2016/12/28/%E8%87%AA%E5%AE%9A%E4%B9%89checkbox%E6%A0%B7%E5%BC%8F/</url>
       <content type="html"><![CDATA[<h1 id="通过css来自定义checkbox样式"><a href="#通过css来自定义checkbox样式" class="headerlink" title="通过css来自定义checkbox样式"></a>通过css来自定义checkbox样式</h1><p>截图： 原生的 checkbox 和 自定义 checkbox 比较</p>
 <p><img src="/images/checkbox-before.png" alt=""><img src="/images/checkbox-after.png" alt=""><br><a id="more"></a></p>
 <h1 id="思路与步骤"><a href="#思路与步骤" class="headerlink" title="思路与步骤"></a>思路与步骤</h1><ol>
@@ -74,7 +74,7 @@
     
     <entry>
       <title><![CDATA[java static、final关键字.md]]></title>
-      <url>http://yoursite.com/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/</url>
+      <url>https://mercyyl.github.io/2016/12/22/java-static%E3%80%81final%E5%85%B3%E9%94%AE%E5%AD%97-md/</url>
       <content type="html"><![CDATA[<h2 id="static-的基本用法和执行顺序"><a href="#static-的基本用法和执行顺序" class="headerlink" title="static 的基本用法和执行顺序"></a>static 的基本用法和执行顺序</h2><p>基础概念</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">被static修饰的属性，字段，方法，块等，都会在类加载时被初始化，且只初始化一次，由static修饰的字段被类所有实例所共享。</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -103,7 +103,7 @@
     
     <entry>
       <title><![CDATA[postgresql 索引.md]]></title>
-      <url>http://yoursite.com/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/</url>
+      <url>https://mercyyl.github.io/2016/12/20/postgresql-%E7%B4%A2%E5%BC%95-md/</url>
       <content type="html"><![CDATA[<h2 id="索引的基础知识"><a href="#索引的基础知识" class="headerlink" title="索引的基础知识"></a>索引的基础知识</h2><p>索引是一种特殊的查询表，可以使用搜索引擎的数据库以加快数据检索。简单地说，索引是表中的数据的一个指针，在一个数据库中的索引是非常相似，如：一本书的目录。<br><a id="more"></a><br>例如，如果想在一本书中引用的所有页面讨论某个话题，先参考索引按字母顺序列出所有目录主题，然后转到一个或多个特定的页码。</p>
 <p>索引有助于加快SELECT查询和WHERE子句，但它会减慢数据的输入，UPDATE和INSERT语句。索引可以创建或删除的数据没有影响。</p>
 <p>创建索引涉及CREATE INDEX语句，它允许命名的索引，索引指定表的一列或多列，并指示索引是否在升序或降序排列。</p>
@@ -158,7 +158,7 @@
     
     <entry>
       <title><![CDATA[javascript 对象.md]]></title>
-      <url>http://yoursite.com/2016/12/19/javascript-%E5%AF%B9%E8%B1%A1-md/</url>
+      <url>https://mercyyl.github.io/2016/12/19/javascript-%E5%AF%B9%E8%B1%A1-md/</url>
       <content type="html"><![CDATA[<h1 id="JavaScript内置对象"><a href="#JavaScript内置对象" class="headerlink" title="JavaScript内置对象"></a>JavaScript内置对象</h1><ul>
 <li>javascript 有很多内置对象, 如：<strong>Object, Function, Array, Date, RegExp, Math, Error, Symbol, String, Number, Boolean</strong>.<a id="more"></a>
 <h1 id="JavaScript的祖先和两位长老"><a href="#JavaScript的祖先和两位长老" class="headerlink" title="JavaScript的祖先和两位长老"></a>JavaScript的祖先和两位长老</h1></li>
@@ -200,7 +200,7 @@
     
     <entry>
       <title><![CDATA[linux 常用命令总结.md]]></title>
-      <url>http://yoursite.com/2016/12/16/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93-md/</url>
+      <url>https://mercyyl.github.io/2016/12/16/linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93-md/</url>
       <content type="html"><![CDATA[<ol>
 <li>ls:    <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al</div></pre></td></tr></table></figure>
 </li>
@@ -240,7 +240,7 @@
     
     <entry>
       <title><![CDATA[first]]></title>
-      <url>http://yoursite.com/2016/12/16/first/</url>
+      <url>https://mercyyl.github.io/2016/12/16/first/</url>
       <content type="html"><![CDATA[<h1 id="Hello-World"><a href="#Hello-World" class="headerlink" title="Hello World"></a>Hello World</h1>]]></content>
     </entry>
     
