@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-04T02:54:39.954Z</updated>
+  <updated>2017-01-04T03:26:05.338Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://yoursite.com/2016/12/29/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%881%EF%BC%89-%E8%A1%A8/"/>
     <id>http://yoursite.com/2016/12/29/数据结构学习笔记（1）-表/</id>
     <published>2016-12-29T03:50:58.000Z</published>
-    <updated>2017-01-04T02:54:39.954Z</updated>
+    <updated>2017-01-04T03:26:05.338Z</updated>
     
     <content type="html"><![CDATA[<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>在数据结构中表的存储形式是线性（又称线性表）的，分为顺序存储（顺序表）和链式存储（链表）</p>
 <ul>
